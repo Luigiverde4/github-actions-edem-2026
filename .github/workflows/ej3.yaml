@@ -1,0 +1,17 @@
+name: Ejercicio 3 - Matriz de Estrategia
+
+on:
+  workflow_dispatch:
+    matrix:
+      version: [3.9, 3.10, 3.11]
+
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Instalar Python {{matrix.version}}
+        run: sudo apt-get install python${{matrix.version}} -y
+      - name: Mostrar version
+        run: python${{matrix.version}} --version
+         
