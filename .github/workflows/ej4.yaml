@@ -13,6 +13,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: archivo
+          path: archivo.txt
   Job2:
     runs-on: ubuntu-latest
     needs: Job1
