@@ -1,5 +1,5 @@
 name: Ejercicio 3 - Matriz de Estrategia
-
+# Matriz de Estrategia: Ejecuta un mismo job de "Test" simultáneamente en tres versiones diferentes de Python (3.11 y 3.12).
 on:
   workflow_dispatch:
     matrix:
@@ -10,8 +10,9 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Instalar Python {{matrix.version}}
-        run: sudo apt-get install python${{matrix.version}} -y
-      - name: Mostrar version
-        run: python${{matrix.version}} --version
-         
+      - name: Configurar Python ${{ matrix.version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.version }}
+      - name: Mostrar versión de Python
+        run: python --version
