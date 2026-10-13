@@ -1,0 +1,12 @@
+name: Ejercicio1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  crearVariable:
+    runs-on: ubuntu-latest
+    name: Crear variable de entorno
+    steps:
+      - name: Crear variable
+        run: echo "MI_VARIABLE=Hola caracola" >> $GITHUB_ENV
