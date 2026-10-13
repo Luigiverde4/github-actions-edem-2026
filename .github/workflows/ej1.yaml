@@ -12,4 +12,4 @@ jobs:
     name: Crear variable de entorno
     steps:
       - name: Crear variable
-        run: echo ${env.CURSO}
+        run: echo ${CURSO}
