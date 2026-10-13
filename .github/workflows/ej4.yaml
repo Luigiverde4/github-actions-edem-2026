@@ -10,7 +10,7 @@ jobs:
       - name: Crear el archivo
         run: echo "Hola caracola" > archivo.txt
       - name: Ofrecer el archivo
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
           name: archivo
   Job2:
@@ -18,7 +18,7 @@ jobs:
     needs: Job1
     steps:
       - name: Descargar el archivo
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v6
         with:
           name: archivo
       - name: Mostrar el contenido del archivo
