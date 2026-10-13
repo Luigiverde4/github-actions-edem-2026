@@ -1,0 +1,16 @@
+name: Ejercicio 2 - Manejo de secretos
+
+
+# Manejo de Secretos: Simula un login. Usa un "Secreto" de GitHub para ocultar una contraseña y mostrarla de forma segura (enmascarada) en el log.
+on:
+  workflow_dispatch:
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    name: Simulación de login con secreto
+    steps:
+      - name: Mostrar mensaje de inicio
+        run: echo "Iniciando simulación de login..."
+      - name: Mostrar contraseña enmascarada
+        run: echo "La contraseña es ${{ secrets.AWS }}"  
